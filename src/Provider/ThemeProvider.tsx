@@ -9,11 +9,15 @@ export const useTheme = () => {
     return context;
 }
 
-export const ThemeProvider = ({ children }: {
-    children: React.ReactNode
-}) => {
-    const [theme, setTheme] = useState(() =>
-        localStorage.getItem('theme') || 'light'
+type ThemeProviderProps = {
+    children: React.ReactNode;
+}
+
+type ThemeType = 'light' | 'dark';
+
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+    const [theme, setTheme] = useState<ThemeType>(() =>
+        (localStorage.getItem('theme') as ThemeType) || 'dark'
     );
 
     useEffect(() => {
