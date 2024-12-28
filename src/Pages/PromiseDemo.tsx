@@ -8,8 +8,8 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { PromiseBox } from './PromiseBox';
-import { StatsPanel } from './StatsPanel';
+import { PromiseBox } from '../components/PromiseBox';
+import { StatsPanel } from '../components/StatsPanel';
 import {
     PromiseState,
     PromiseConfig,
@@ -27,7 +27,7 @@ const methodDescriptions: Record<PromiseMethod, string> = {
     any: "Returns the first promise to succeed. Fails only if all promises fail."
 };
 
-const PromiseMethodsDemo = () => {
+const PromiseDemo = () => {
     const [activeDemo, setActiveDemo] = useState<PromiseMethod | null>(null);
     const [promiseStates, setPromiseStates] = useState<PromiseState[]>([]);
     const [result, setResult] = useState<string>('');
@@ -290,4 +290,4 @@ const PromiseMethodsDemo = () => {
     </Card>)
 };
 
-export default PromiseMethodsDemo;
+export default PromiseDemo;

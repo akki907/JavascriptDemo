@@ -1,17 +1,15 @@
-import PromiseMethodsDemo from './components/PromiseMethodsDemo'
-import ThemeToggle from './components/ThemeToggle'
+import { Outlet } from 'react-router'
+import Header from './components/Header'
+import { BackgroundBeams } from './components/ui/background-beams'
 
 function App() {
-
   return (
-
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <div className="p-4 flex justify-end">
-        <ThemeToggle />
-      </div>
-      <main className="p-4">
-        <PromiseMethodsDemo />
+    <div className="min-h-screen ">
+      <Header />
+      <main className="container mx-auto p-4">
+        <Outlet />
       </main>
+      <BackgroundBeams className='z-[-1]' />
     </div>
   )
 }
