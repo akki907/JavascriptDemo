@@ -1,5 +1,4 @@
 import useData from '@/hooks/useData'
-import React from 'react'
 
 const Child = () => {
 
